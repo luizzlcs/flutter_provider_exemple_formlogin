@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (context) => UsuarioSistema(nome: 'Luiz Carlos', senha: '0284'),
+      create: (context) => UsuarioSistema(),
       child: const MyFormLogin(),
     ),
   );

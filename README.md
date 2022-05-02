@@ -8,31 +8,27 @@
 
 
  > SOBRE O MÓDULO:
-- O objetivo dessa atividade foi conhecer como funciona o SQLite dentro do flutter e como implementa-lo.
+- O objetivo dessa atividade foi utilizar o package provider para pegar os dados passados no formulário para página seguinte.
 
-- Packages: 
-    > <b>SQfLite</b>: Utilizado o pacote para utilizar a extrutura de banco de dados embarcado no aplicativo, pacote disponível [aqui](https://pub.dev/packages?q=sqflite). 
+- Package: 
+    > <b>Provider</b>: O Provider é um pakage que nos oferece uma maneira fácil e semplificada de separar a lógica de negócios de nossos widgets em aplicativos. Este pacote é baixado 
+ [aqui](https://pub.dev/packages/provider). Sua instalação é feita no no arquivo <i>pubspec.yaml;</i>
 
-    > <b>Path</b>: O pacote faz a manipulação do caminho de acesso ao banco de multiplataformas, de modo que os diferentes separadores de caminhos sejam identificados automáticamente, para mais detalhes sobre o pacote, clique [aqui](https://pub.dev/packages/path).
-- Criando extrutra de código para o versionamento do banco;
-- Criando tabelas;
-<p align="center">
-<img width="" height="180" src="assets/images/sqlite.png"/>
-</p>
-- Fazendo acesso ao banco:
+- <b>Sobre o uso do provider:</b>
 
-<p align="center">
-<img width="" height="180" src="assets/images/dados.png"/>
-</p>
+    > Separar seu estado (state) de sua UI (interface do Usuário);
+
+    > Tornar seu código mais fácil, organizado, tetável e escalonável;
+
+    > O Provider é recomendado pela equipe do Flutter;
+
+    > O Provider é construído usando Widgets. Ele permite que você integre seus Widgets como se fosse parte nativa do flutter;
+
+    > É usado para separar Lógica de Negócios tornando seu código muito mais fácil de testar
 
 
-    > Insert: Inserindo dados;
-
-    > Delete: Eliminando dados;
-
-    > Update: Atualizando os dados;
-
-    > Select: Visualizando todos os dados do banco;
+- Nessa essa atividade foi criado apenas a classe UsuariosSistema;
+- No wiget principal foi utilizado apenas ChangeNotifierProvider, sem a necessidade de usar o MultiProvider em decorrência de haver apenas uma classe para gerenciar os dados;
 
 
 
