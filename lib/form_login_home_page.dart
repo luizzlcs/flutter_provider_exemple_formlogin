@@ -7,6 +7,8 @@ class FormLoginHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String usuario = '';
+    String senha = '';
     return Scaffold(
       appBar: AppBar(
         title: const Text(''),
@@ -14,12 +16,24 @@ class FormLoginHomePage extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.only(left: 20.0, right: 20, bottom: 10),
               child: TextFormField(
+                onChanged: (text) {
+                  print(text);
+                  usuario = text;
+                },
                 autofocus: true,
+                cursorColor: Colors.pink,
+                cursorWidth: 5,
+                cursorHeight: 30,
+                maxLength: 20,
+                obscuringCharacter: '@',
                 decoration: const InputDecoration(
+                  helperText: 'Digite o nome do usuário',
+                  isDense: true,
                   prefixIcon: Icon(Icons.people_alt_rounded),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(50)),
@@ -29,10 +43,16 @@ class FormLoginHomePage extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.all(12.0),
+              padding: EdgeInsets.only(left: 20.0, right: 20, bottom: 30),
               child: TextFormField(
+                onChanged: (text) {
+                  print('Senha: $text');
+                  senha = text;
+                },
+                obscuringCharacter: '❂',
                 obscureText: true,
                 decoration: const InputDecoration(
+                  isDense: true,
                   prefixIcon: Icon(Icons.password),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(50)),
@@ -41,14 +61,21 @@ class FormLoginHomePage extends StatelessWidget {
                 ),
               ),
             ),
-            FloatingActionButton.extended(
+            Padding(
+              padding: const EdgeInsets.only(left: 20.0, right: 20, bottom: 10),
+              child: FloatingActionButton.extended(
                 backgroundColor: Colors.black26,
                 focusColor: Colors.blue,
                 hoverColor: Colors.blue,
                 foregroundColor: Colors.amberAccent,
                 icon: Icon(Icons.home),
-                onPressed: () {},
-                label: Text('Acessar'))
+                label: Text('Acessar'),
+                onPressed: () {
+                  print('''Usuário: $usuario''');
+                  print('''Senha: $senha''');
+                },
+              ),
+            )
           ],
         ),
       ),
