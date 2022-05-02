@@ -1,6 +1,6 @@
-<h1 align="center"> SQLite com Flutter</h1>
+<h1 align="center"> Formulário Login com Provider</h1>
 
-<p align="center"> Um pouco de SQLite</p>
+<p align="center"> ChangeNotifier</p>
 
 <p align="center">
 <img width="" height="270" src="assets/images/Login.gif"/>
