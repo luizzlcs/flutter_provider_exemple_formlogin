@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'usuario_sistema.dart';
+import 'package:provider/provider.dart';
 
 class FormLoginHomePage extends StatelessWidget {
   const FormLoginHomePage({Key? key}) : super(key: key);
@@ -11,7 +13,7 @@ class FormLoginHomePage extends StatelessWidget {
     String senha = '';
     return Scaffold(
       appBar: AppBar(
-        title: const Text(''),
+        title: const Text('Login'),
       ),
       body: Center(
         child: Column(
@@ -30,7 +32,6 @@ class FormLoginHomePage extends StatelessWidget {
                 cursorWidth: 5,
                 cursorHeight: 30,
                 maxLength: 20,
-                obscuringCharacter: '@',
                 decoration: const InputDecoration(
                   helperText: 'Digite o nome do usuário',
                   isDense: true,
@@ -51,6 +52,8 @@ class FormLoginHomePage extends StatelessWidget {
                 },
                 obscuringCharacter: '❂',
                 obscureText: true,
+                cursorColor: Colors.pink,
+                cursorWidth: 5,
                 decoration: const InputDecoration(
                   isDense: true,
                   prefixIcon: Icon(Icons.password),
@@ -71,8 +74,11 @@ class FormLoginHomePage extends StatelessWidget {
                 icon: Icon(Icons.home),
                 label: Text('Acessar'),
                 onPressed: () {
-                  print('''Usuário: $usuario''');
-                  print('''Senha: $senha''');
+                  Navigator.of(context).pushReplacementNamed('/loginpage');
+                  Provider.of<UsuarioSistema>(context, listen: false).nome =
+                      usuario;
+                  Provider.of<UsuarioSistema>(context, listen: false).senha =
+                      senha;
                 },
               ),
             )

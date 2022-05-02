@@ -1,6 +1,5 @@
-
-
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_exemple_formlogin/login_page.dart';
 
 import 'form_login_home_page.dart';
 
@@ -14,7 +13,11 @@ class MyFormLogin extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const FormLoginHomePage(),
+      routes: {
+        '/formlogin': (context) => const MyFormLogin(),
+        '/loginpage': (context) => const LoginPage()
+      },
+      home: FormLoginHomePage(),
     );
   }
 }
