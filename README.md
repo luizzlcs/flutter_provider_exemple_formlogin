@@ -3,7 +3,7 @@
 <p align="center"> Um pouco de SQLite</p>
 
 <p align="center">
-<img width="" height="270" src="assets/images/login.gif"/>
+<img width="" height="270" src="assets/images/Login.gif"/>
 </p>
 
 
